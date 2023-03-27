@@ -14,7 +14,7 @@ const urlBase64ToUint8Array = (base64String) => {
     return outputArray;
 }
 
-const publicVapidKey = 'BMpOlnoeoGrOZx2KmUtt-jawr0Vhmq9eqoCD8-OvXzAeVjY1OVrJtUMTmF_hWg3gyjZGpE86v4dSPabP7Jqw6hY';
+const publicVapidKey = process.env.PUBLIC_VAPID_KEY;
 
 const triggerPushNotification = async () => {
     if ('serviceWorker' in navigator) {
