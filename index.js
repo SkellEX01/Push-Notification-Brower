@@ -15,7 +15,6 @@ const privateVapidKey = process.env.PRIVATE_VAPID_KEY
 webPush.setVapidDetails('mailto:test@example.com', publicVapidKey, privateVapidKey)
 
 app.post('/subscribe', (req, res) => {
-    console.log(req.body, 'req');
     const subscription = req.body
     res.status(201).json({})
     const payload = JSON.stringify({ title: 'Push notifications with Service Workers' })
