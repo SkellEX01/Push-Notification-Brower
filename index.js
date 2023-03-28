@@ -16,9 +16,9 @@ webPush.setVapidDetails('mailto:test@example.com', publicVapidKey, privateVapidK
 
 app.post('/subscribe', (req, res) => {
     const subscription = req.body
-    res.status(201).json({})
-    const payload = JSON.stringify({ title: 'Push notifications with Service Workers' })
-    webPush.sendNotification(subscription, payload).catch(err => console.log(err))
+    const payload = JSON.stringify({ title: 'Administrator' });
+    webPush.sendNotification(subscription, payload)
+    res.status(201).json({ body: 'Sent!' })
 })
 
 app.listen(PORT, () => console.log(`Server running in port ${PORT}`))
